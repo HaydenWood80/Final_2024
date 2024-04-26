@@ -150,7 +150,7 @@ Like we have done previously. We are going to filter the results so it only appl
 ### Graphical Descriptive Results
 
 ```{r}
-levels(dataG$sex)
+levels(dataG$LGBTQ)
 dataG = filter(FinalData,LGBTQ=="gay")
 
 dd2 <- dataG %>% group_by(treatment,infected) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
@@ -172,7 +172,7 @@ This graph shows the number of people who revieved the placebo vs the vaccine be
 ### Numerical Descriptive Results
 
 ```{r}
-levels(dataG$sex)
+levels(dataG$LGBTQ)
 dataG = filter(FinalData,LGBTQ=="gay")
 
 table1 <- xtabs(~infected +treatment , data=dataG)
@@ -185,8 +185,8 @@ this shows percentages of the vaccine and and the placebo dose between people wh
 ## Inferential Results
 
 ```{r}
-levels(dataG$sex)
-dataG = filter(FinalData,LGBTQ=="gay")
+levels(dataG$LGBTQ)
+dataG = filter(dataG,LGBTQ=="gay")
 
 
 chisq.test(table1)
@@ -206,7 +206,39 @@ In this section we are going to take the subcategory of drug users "druggies" an
 
 ### Graphical Descriptive Results
 
+
+```{r}
+levels(dataG$DrugUser)
+dataG = filter(FinalData,DrugUser=="yes")
+
+dd2 <- dataG %>% group_by(treatment,infected) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=treatment,y=count,fill=infected))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=treatment,y=prcnt*100,fill=infected)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+This graph shows the differences between the vaccine and the placebo vaccine between drugusers. We used a code at the begging to filter the category drug users and the "yes" subcategory. This graph suggests that there is a slightly higher infection between drug users that got the placebo to the vaccine.
+
 ### Numerical Descriptive Results
+
+```{r}
+levels(dataG$DrugUser)
+dataG = filter(FinalData,DrugUser=="yes")
+
+table1 <- xtabs(~infected +treatment , data=dataG)
+rowPerc(table1)
+colPerc(table1)
+```
+
+This shows differences in drugUsers that use drugs that have been given the placebo and the real vaccine. 
 
 ## Inferential Results
 
