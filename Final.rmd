@@ -128,17 +128,24 @@ This graph shows the difference between infected patients who received either a 
 levels(FinalData$sex)
 dataG = filter(FinalData,sex=="F")
 
+table1 <- xtabs(~infected +treatment , data=dataG)
+rowPerc(table1)
+colPerc(table1)
+```
+
+This table shows the differences in infected patients that are female that have received that vaccine or placebo vs those who haven't. Th percentages suggest that the covid treatment could have a positive affect in showing resistance to the covid disiese
+
+## Inferential Results
+
+```{r}
+levels(FinalData$sex)
+dataG = filter(FinalData,sex=="f")
+
 
 chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
 ```
-
-This gives us an odd ratio in Female subjets that have been either given the placebo or the real vaccine. The odds ratio that the equation has given us is 2.242522
-
-## Inferential Results
-
-
 
 ## LGBTQ
 
