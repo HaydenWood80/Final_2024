@@ -184,7 +184,18 @@ this shows percentages of the vaccine and and the placebo dose between people wh
 
 ## Inferential Results
 
+```{r}
+levels(dataG$sex)
+dataG = filter(FinalData,LGBTQ=="gay")
 
+
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+
+With the data above and the test wwe have just conducted. we have shown that the P value is 0.00000006668 or 6.668e-08
 
 ## Druggies
 
