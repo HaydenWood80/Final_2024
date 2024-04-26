@@ -30,8 +30,7 @@ $H_A$ The new preventative vaccine (covid921) does NOT exhibit different effecti
 
 #Methods
 
-Covid921 is a Categorical data and also Sub-populations is a catagorical data, so we will use the Cat_Cat helper file
-
+Covid921 is a Categorical data set and also Sub-populations is a catagorical data set, so we will use the Cat_Cat helper file which will give us codes to help properly decode the dataset we have been provided with. We are going to use a ggplot, tables and fishers tests for each plot of data to help us get a more defined look at the covid921 vaccine's effects on these subcatories. We will also compare the P value for each set of data to see if there are any big changes in these different subcatagories.
 
 ## Males
 
