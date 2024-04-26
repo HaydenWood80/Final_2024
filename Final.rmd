@@ -35,10 +35,6 @@ Covid921 is a Categorical data and also Sub-populations is a catagorical data, s
 
 ## Males
 
-
-
-# Results
-
 ## Descriptive Results
 
 Here we are going to compare the effectiveness in males that have been given the Covid921
@@ -93,10 +89,6 @@ This Chi square statistic shows that the p-value comes out to be 4.631e-14 for t
 
 ## Females
 
-
-
-# Results
-
 ## Descriptive Results
 
 Here we are going to compare the effectiveness in females that have been given the Covid921. With all the codes in this section we make sure to start with a code that filters to make sure we are only using datasets from the gender "f"
@@ -139,7 +131,7 @@ This table shows the differences in infected patients that are female that have 
 
 ```{r}
 levels(FinalData$sex)
-dataG = filter(FinalData,sex=="f")
+dataG = filter(FinalData,sex=="F")
 
 
 chisq.test(table1)
@@ -147,14 +139,13 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
+The P value for The gender F for the effectiveness of the vaccine is 0.0002732
+
 ## LGBTQ
 
-
-
-
-# Results
-
 ## Descriptive Results
+
+Like we have done previously. We are going to filter the results so it only applies to those appart of the LGBTQ community to see the effectiveness of the covid921 vaccine 
 
 ### Graphical Descriptive Results
 
