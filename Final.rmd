@@ -200,11 +200,9 @@ With the data above and the test wwe have just conducted. we have shown that the
 ## Druggies
 
 
-
-
-# Results
-
 ## Descriptive Results
+
+In this section we are going to take the subcategory of drug users "druggies" and filter their results to see the effectiveness of the Covid vaccine
 
 ### Graphical Descriptive Results
 
