@@ -41,7 +41,7 @@ Covid921 is a Categorical data and also Sub-populations is a catagorical data, s
 
 ## Descriptive Results
 
-
+Here we are going to compare the effectiveness in males that have been given the Covid921
 
 
 ### Graphical Descriptive Results
@@ -64,13 +64,28 @@ basicCC <- ggplot(dd2,aes(x=treatment,y=prcnt*100,fill=infected))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
+This graph suggests that the difference in males that have been given the "placebo" compared to the real "vaccine" has a appeared to be higher when compared to the "vaccine"
 
 ### Numerical Descriptive Results
+```{r}
+levels(FinalData$sex)
+dataG = filter(FinalData,sex=="M")
+
+table1 <- xtabs(~infected +treatment , data=dataG)
+rowPerc(table1)
+colPerc(table1)
+```
+This table suggest that the number of males "M" that recieved the "treatment" has much lower infection rate than those who did not recieve the "treatment"
 
 ## Inferential Results
 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
 
-
+This Chi square statistic shows that the p-value comes out to be 4.631e-14 for the effectiveness in males
 
 ## Females
 
@@ -79,6 +94,8 @@ basicCC + geom_bar(stat="identity", position = "dodge")
 # Results
 
 ## Descriptive Results
+
+Here we are going to compare the effectiveness in males that have been given the Covid921
 
 ### Graphical Descriptive Results
 
