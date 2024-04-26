@@ -28,7 +28,9 @@ $H_0$ The new preventative vaccine (covid921) does exhibit different effectivene
 
 $H_A$ The new preventative vaccine (covid921) does NOT exhibit different effectiveness across the variety of subpopulations tracked
 
-#methods
+#Methods
+
+Covid921 is a Categorical data and also Sub-populations is a catagorical data, so we will use the Cat_Cat helper file
 
 
 ## Males
@@ -39,7 +41,29 @@ $H_A$ The new preventative vaccine (covid921) does NOT exhibit different effecti
 
 ## Descriptive Results
 
+
+
+
 ### Graphical Descriptive Results
+
+```{r}
+levels(FinalData$sex)
+dataG = filter(FinalData,sex=="M")
+
+dd2 <- dataG %>% group_by(treatment,infected) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=treatment,y=count,fill=infected))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=treatment,y=prcnt*100,fill=infected)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
 
 ### Numerical Descriptive Results
 
