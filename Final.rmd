@@ -120,9 +120,21 @@ basicCC <- ggplot(dd2,aes(x=treatment,y=prcnt*100,fill=infected))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
-This graph shows the difference between infected patients who recieved either a placebo vaccine or the actual vaccine between, the gender "f" in females. We make sure to include a code at the begging to make sure we are only using data set "f" in the sex column. This also shows 2 graphs, 1 in percentages and one in count.
+This graph shows the difference between infected patients who received either a placebo vaccine or the actual vaccine between, the gender "f" in females. We make sure to include a code at the begging to make sure we are only using data set "f" in the sex column. This also shows 2 graphs, 1 in percentages and one in count.
 
 ### Numerical Descriptive Results
+
+```{r}
+levels(FinalData$sex)
+dataG = filter(FinalData,sex=="F")
+
+
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+This gives us an odd ratio in Female subjets that have been either given the placebo or the real vaccine. The odds ratio that the equation has given us is 2.242522
 
 ## Inferential Results
 
