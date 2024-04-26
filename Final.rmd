@@ -171,6 +171,17 @@ This graph shows the number of people who revieved the placebo vs the vaccine be
 
 ### Numerical Descriptive Results
 
+```{r}
+levels(dataG$sex)
+dataG = filter(FinalData,LGBTQ=="gay")
+
+table1 <- xtabs(~infected +treatment , data=dataG)
+rowPerc(table1)
+colPerc(table1)
+```
+
+this shows percentages of the vaccine and and the placebo dose between people who identify as "gay" in the LBGTQ subcategory. Like shown in the graph,this table suggests we can see that there is a small percentage increase in "gay" and Infected under the vaccine
+
 ## Inferential Results
 
 
