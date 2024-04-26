@@ -195,7 +195,7 @@ fisher.test(table1)
 ```
 
 
-With the data above and the test wwe have just conducted. we have shown that the P value is 0.00000006668 or 6.668e-08
+With the data above and the test wwe have just conducted. we have shown that the P value is 1.029e-08
 
 ## Druggies
 
@@ -230,8 +230,8 @@ This graph shows the differences between the vaccine and the placebo vaccine bet
 ### Numerical Descriptive Results
 
 ```{r}
-levels(dataG$DrugUser)
-dataG = filter(FinalData,DrugUser=="yes")
+levels(FinalDat$DrugUser)
+FinalDat = filter(FinalDat,DrugUser=="yes")
 
 table1 <- xtabs(~infected +treatment , data=dataG)
 rowPerc(table1)
@@ -242,6 +242,17 @@ This shows differences in drugUsers that use drugs that have been given the plac
 
 ## Inferential Results
 
+```{r}
+levels(FinalData$DrugUser)
+FinalData = filter(FinalData,DrugUser=="yes")
+
+
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+The P value for the people that have been given the to the subcategory "yes" for DrugUsers 2.32e-10
 
 # Overall Results and Conclusions
 
