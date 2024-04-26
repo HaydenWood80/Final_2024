@@ -95,7 +95,7 @@ Here we are going to compare the effectiveness in females that have been given t
 
 ### Graphical Descriptive Results
 ```{r}
-levels(FinalData$sex)
+levels(dataG$sex)
 dataG = filter(FinalData,sex=="F")
 
 dd2 <- dataG %>% group_by(treatment,infected) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
@@ -148,6 +148,26 @@ The P value for The gender F for the effectiveness of the vaccine is 0.0002732
 Like we have done previously. We are going to filter the results so it only applies to those appart of the LGBTQ community to see the effectiveness of the covid921 vaccine 
 
 ### Graphical Descriptive Results
+
+```{r}
+levels(dataG$sex)
+dataG = filter(FinalData,LGBTQ=="gay")
+
+dd2 <- dataG %>% group_by(treatment,infected) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=treatment,y=count,fill=infected))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=treatment,y=prcnt*100,fill=infected)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+This graph shows the number of people who revieved the placebo vs the vaccine between people who identify as "gay" that are apart of the LGBTQ. Something interesting that we havent seen in the other graphs is that the graph appears to suggest that that more people that recieved that vaccine in this community has apeared to have accured the virus compared to the placebo. When we conducted the same test of the F for Female and M in male we saw and opposite suggestion
 
 ### Numerical Descriptive Results
 
