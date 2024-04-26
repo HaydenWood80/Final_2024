@@ -28,17 +28,76 @@ $H_0$ The new preventative vaccine (covid921) does exhibit different effectivene
 
 $H_A$ The new preventative vaccine (covid921) does NOT exhibit different effectiveness across the variety of subpopulations tracked
 
+#methods
+
+
 ## Males
 
 
+
+# Results
+
+## Descriptive Results
+
+### Graphical Descriptive Results
+
+### Numerical Descriptive Results
+
+## Inferential Results
+
+
+
+
 ## Females
+
+
+
+# Results
+
+## Descriptive Results
+
+### Graphical Descriptive Results
+
+### Numerical Descriptive Results
+
+## Inferential Results
+
 
 
 ## LGBTQ
 
 
 
+
+# Results
+
+## Descriptive Results
+
+### Graphical Descriptive Results
+
+### Numerical Descriptive Results
+
+## Inferential Results
+
+
+
 ## Druggies
 
 
+
+
+# Results
+
+## Descriptive Results
+
+### Graphical Descriptive Results
+
+### Numerical Descriptive Results
+
+## Inferential Results
+
+
 # Overall Results and Conclusions
+
+
+
