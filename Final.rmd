@@ -80,6 +80,10 @@ This table suggest that the number of males "M" that recieved the "treatment" ha
 ## Inferential Results
 
 ```{r}
+levels(FinalData$sex)
+dataG = filter(FinalData,sex=="M")
+
+
 chisq.test(table1)
 chisqtestGC(table1)
 fisher.test(table1)
@@ -95,9 +99,28 @@ This Chi square statistic shows that the p-value comes out to be 4.631e-14 for t
 
 ## Descriptive Results
 
-Here we are going to compare the effectiveness in males that have been given the Covid921
+Here we are going to compare the effectiveness in females that have been given the Covid921. With all the codes in this section we make sure to start with a code that filters to make sure we are only using datasets from the gender "f"
 
 ### Graphical Descriptive Results
+```{r}
+levels(FinalData$sex)
+dataG = filter(FinalData,sex=="F")
+
+dd2 <- dataG %>% group_by(treatment,infected) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=treatment,y=count,fill=infected))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=treatment,y=prcnt*100,fill=infected)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
+```
+
+This graph shows the difference between infected patients who recieved either a placebo vaccine or the actual vaccine between, the gender "f" in females. We make sure to include a code at the begging to make sure we are only using data set "f" in the sex column. This also shows 2 graphs, 1 in percentages and one in count.
 
 ### Numerical Descriptive Results
 
