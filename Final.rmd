@@ -37,7 +37,7 @@ Covid921 is a Categorical data and also Sub-populations is a catagorical data, s
 
 ## Descriptive Results
 
-Here we are going to compare the effectiveness in males that have been given the Covid921
+Here we are going to compare the effectiveness in males that have been given the Covid921 using GGplots and filtering bewtween only males
 
 
 ### Graphical Descriptive Results
@@ -60,7 +60,7 @@ basicCC <- ggplot(dd2,aes(x=treatment,y=prcnt*100,fill=infected))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
-This graph suggests that the difference in males that have been given the "placebo" compared to the real "vaccine" has a appeared to be higher when compared to the "vaccine"
+This graph suggests that the difference in males that have been given the "placebo" compared to the real "vaccine" has a appeared to be higher when compared to the "vaccine". But not a substantial difference
 
 ### Numerical Descriptive Results
 ```{r}
@@ -71,7 +71,7 @@ table1 <- xtabs(~infected +treatment , data=dataG)
 rowPerc(table1)
 colPerc(table1)
 ```
-This table suggest that the number of males "M" that recieved the "treatment" has much lower infection rate than those who did not recieve the "treatment"
+This table suggest that the number of males "M" that recieved the "treatment" has much lower infection rate than those who did not recieve the "treatment". But again not at a substantial rate
 
 ## Inferential Results
 
@@ -112,7 +112,7 @@ basicCC <- ggplot(dd2,aes(x=treatment,y=prcnt*100,fill=infected))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
-This graph shows the difference between infected patients who received either a placebo vaccine or the actual vaccine between, the gender "f" in females. We make sure to include a code at the begging to make sure we are only using data set "f" in the sex column. This also shows 2 graphs, 1 in percentages and one in count.
+This graph shows the difference between infected patients who received either a placebo vaccine or the actual vaccine between, the gender "f" in females. We make sure to include a code at the begging to make sure we are only using data set "f" in the sex column. This also shows 2 graphs, one in percentages and one in count.
 
 ### Numerical Descriptive Results
 
@@ -167,7 +167,7 @@ basicCC <- ggplot(dd2,aes(x=treatment,y=prcnt*100,fill=infected))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
-This graph shows the number of people who revieved the placebo vs the vaccine between people who identify as "gay" that are apart of the LGBTQ. Something interesting that we havent seen in the other graphs is that the graph appears to suggest that that more people that recieved that vaccine in this community has apeared to have accured the virus compared to the placebo. When we conducted the same test of the F for Female and M in male we saw and opposite suggestion
+This graph shows the number of people who revieved the placebo vs the vaccine between people who identify as "gay" that are apart of the LGBTQ. Something interesting that we havent seen in the other graphs is that the graph appears to suggest that that more people that recieved that vaccine in this community has apeared to have accured the virus compared to the placebo. When we conducted the same test of the F for Female and M in male we saw and opposite suggestion. But this difference is still not big enough to make a substantial impact
 
 ### Numerical Descriptive Results
 
@@ -195,7 +195,7 @@ fisher.test(table1)
 ```
 
 
-With the data above and the test wwe have just conducted. we have shown that the P value is 1.029e-08
+With the data above and the test we have just conducted. we have shown that the P value is 1.029e-08
 
 ## Druggies
 
@@ -254,7 +254,26 @@ fisher.test(table1)
 
 The P value for the people that have been given the to the subcategory "yes" for DrugUsers 2.32e-10
 
-# Overall Results and Conclusions
+# Overall Results and Conclusions            
+Based on the analysis conducted across four different subpopulations (males, females, LGBTQ individuals, and drug users), we have obtained the following p-values:
 
+For males:        
+𝑝= 0.00000000000004631
+ 
+For females:         
+𝑝= 0.0002732
+
+For LGBTQ individuals:         
+𝑝= 0.00000001029
+ 
+For drug users:         
+𝑝=0.000000000232
+
+ 
+Given the significance level typically set at 𝛼= 0.05 we compare these p-values to determine if we should reject the null hypothesis $H_0$ that the new preventative vaccine (covid921) exhibits different effectiveness across the variety of subpopulations tracked.
+
+Considering all four p-values, we observe that each one is substantially smaller than the level of 0.05. In other words, the probability of observing such extreme results under the assumption that the vaccine exhibits different effectiveness across subpopulations is extremely low.
+
+Therefore, based on the statistical analysis conducted, we reject the null hypothesis $H_0$ and conclude that the new preventative vaccine (covid921) does NOT exhibit different effectiveness across the variety of subpopulations tracked. Instead, the evidence suggests that the vaccine's effectiveness is consistent across different demographic subgroups.
 
 
