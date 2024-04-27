@@ -124,7 +124,7 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
-This table shows the differences in infected patients that are female that have received that vaccine or placebo vs those who haven't. Th percentages suggest that the covid treatment could have a positive affect in showing resistance to the covid disiese
+This table shows the differences in infected patients that are female that have received that vaccine or placebo vs those who haven't. The percentages suggest that the covid treatment could have a positive affect in showing resistance to the covid disease
 
 ## Inferential Results
 
