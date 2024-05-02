@@ -94,24 +94,31 @@ Here we are going to compare the effectiveness in females that have been given t
 
 ### Graphical Descriptive Results
 ```{r}
-levels(dataG$sex)
-dataG = filter(FinalData,sex=="F")
-
-dd2 <- dataG %>% group_by(treatment,infected) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
+library(ggplot2)
 
 
-# the group_by followed by summarize(count=n())
+dataG <- filter(FinalData, sex == "F")
 
-basicC <- ggplot(dd2,aes(x=treatment,y=count,fill=infected))
-basicC + geom_bar(stat="identity",position="dodge")
+dd2 <- dataG %>%
+  group_by(treatment, infected) %>%
+  summarize(count = n()) %>%
+  mutate(prcnt = count / sum(count))
 
-#Now for percentage plot
+colors <- c("pink", "purple")
 
-basicCC <- ggplot(dd2,aes(x=treatment,y=prcnt*100,fill=infected)) 
-basicCC + geom_bar(stat="identity", position = "dodge")
+basicC <- ggplot(dd2, aes(x = treatment, y = count, fill = infected)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  scale_fill_manual(values = colors)
+
+basicCC <- ggplot(dd2, aes(x = treatment, y = prcnt * 100, fill = infected)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  scale_fill_manual(values = colors)
+
+print(basicC)
+print(basicCC)
 ```
 
-This graph shows the difference between infected patients who received either a placebo vaccine or the actual vaccine between, the gender "f" in females. We make sure to include a code at the begging to make sure we are only using data set "f" in the sex column. This also shows 2 graphs, one in percentages and one in count.
+This graph shows the difference between infected patients who received either a placebo vaccine or the actual vaccine between, the gender "f" in females. We make sure to include a code at the begging to make sure we are only using data set "f" in the sex column. This also shows 2 graphs, one in percentages and one in count. Also added pink and purple colours to help better corilate gender 
 
 ### Numerical Descriptive Results
 
