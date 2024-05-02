@@ -84,7 +84,7 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
-This Chi square statistic shows that the p-value comes out to be 4.631e-14 for the effectiveness in males
+This ttest statistic shows that the p-value comes out to be  0.00000000000004631 for the effectiveness in males and chi sq shows 0.0000000000001098
 
 ## Females
 
@@ -138,7 +138,7 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
-The P value for The gender F for the effectiveness of the vaccine is 0.0002732
+The P value for The gender F for the effectiveness of the vaccine is 0.000000000232 for the T test and 0.000000002842 for the chisq
 
 ## LGBTQ
 
@@ -194,7 +194,8 @@ fisher.test(table1)
 ```
 
 
-With the data above and the test we have just conducted. we have shown that the P value is 1.029e-08
+With the data above and the test we have just conducted. we have shown that the P value is 1.029e-08 for the ttest and 6.668e-08
+for the chisq
 
 ## Druggies
 
@@ -251,10 +252,11 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
-The P value for the people that have been given the to the subcategory "yes" for DrugUsers 2.32e-10
+The P value for the people that have been given the to the subcategory "yes" for DrugUsers 2.32e-10 for the ttest and 2.842e-09
+for the Chisq
 
 # Overall Results and Conclusions            
-Based on the analysis conducted across four different subpopulations (males, females, LGBTQ individuals, and drug users), we have obtained the following p-values:
+Based on the analysis conducted across four different subpopulations (males, females, LGBTQ individuals, and drug users), we have obtained the following p-values, ive simplified it for only the P values from the Ttest because the Chisq supported the ttest in each subcatagory
 
 For males:        
 𝑝= 0.00000000000004631
